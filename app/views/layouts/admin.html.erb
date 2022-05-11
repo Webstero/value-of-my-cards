@@ -18,16 +18,8 @@
       <nav>
         <h4>Navigation</h4>
         <ul>
-          <% if user_signed_in? %>
-            <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
-            <% elsif !admin_signed_in? %>
-            <li><%= link_to "Sign in", new_user_session_path %></li>
-            <li><%= link_to  'Sign up', new_user_registration_path %></li>
-          <% end %>
           <% if admin_signed_in? %>
-            <li><%= link_to  'Sign out as Admin', destroy_admin_session_path, method: :delete %></li>
-          <% elsif !user_signed_in? %>
-            <li><%= link_to  "Sign in as Admin", new_admin_session_path %></li>
+            <li><%= link_to 'Sign out as Admin', destroy_admin_session_path, method: :delete %></li>
           <% end %>
         </ul>
       </nav>
